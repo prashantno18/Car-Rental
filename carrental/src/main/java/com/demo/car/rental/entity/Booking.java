@@ -26,10 +26,6 @@ import lombok.ToString;
 public class Booking {
 
 
-	public Booking() {
-		super();
-	}
-
 	public Booking(LocalDateTime beginningDateTime, LocalDateTime endDateTime, Car car) {
 		this.beginning=beginningDateTime;
 		this.end=endDateTime;
