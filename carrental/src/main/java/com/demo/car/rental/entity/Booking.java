@@ -12,10 +12,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 @Entity
@@ -24,6 +25,10 @@ import lombok.ToString;
 @ToString
 public class Booking {
 
+
+	public Booking() {
+		super();
+	}
 
 	public Booking(LocalDateTime beginningDateTime, LocalDateTime endDateTime, Car car) {
 		this.beginning=beginningDateTime;
@@ -56,6 +61,7 @@ public class Booking {
 	@Getter
 	@NonNull
 	@ManyToOne
+	@JsonIgnore
 	@JoinColumn(name = "Car_Id", nullable = false)
 	private Car car;
 
